@@ -31,9 +31,9 @@ void bubble_sort (int arr[], int lenght) {
     printf("lenght = %d\n", lenght);
 
     for (int i = 0; i < lenght-1; i++) {
-        for (int j = i+1; j < lenght; j++) {
-            if (arr[i] > arr[j]) {
-                swap(&arr[i], &arr[j]);
+        for (int j = 0; j < lenght-1-i; j++) {
+            if (arr[j] > arr[j+1]) {
+                swap(&arr[j], &arr[j+1]);
             }
         }
         print_array(arr, lenght);
