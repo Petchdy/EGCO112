@@ -1,2 +1,2 @@
 # EGCO112
-note
+This repositories is my note so if there is any mistake or something that can improve please feel free to help me. (○´∀｀○)
