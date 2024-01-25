@@ -39,20 +39,6 @@ void insertion_sort(int arr[], int lenght) {
         printf("\n");
     
     }
-
-    // for (int i = 1; i < lenght; i++) {
-    
-    //     temp = arr[i];
-
-    //     for (int j = i-1; j >= 0 && arr[j] > temp ; j--) {
-    //         arr[j+1] = arr[j];
-    //         print_array(arr, lenght);
-    //         printf("\n");
-    //     }
-    //     arr[i-1] = temp;
-    //     print_array(arr, lenght);
-    //     printf("\n");
-    // }
 }
 
 void print_array(int arr[], int lenght) {

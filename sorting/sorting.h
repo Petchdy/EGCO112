@@ -29,7 +29,7 @@ void insertion_sort(int arr[], int lenght) {
 
     for (int i = 0; i < lenght-1; i++) {
 
-        for (int j = i+1; j > 0 && arr[j] < arr[j-1]; j--) {
+        for (int j = i+1; j > 0 && arr[j-1] > arr[j]; j--) {
             swap(&arr[j], &arr[j-1]);
         }
     

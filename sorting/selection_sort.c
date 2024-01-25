@@ -24,7 +24,7 @@ void swap(int * a, int * b) {
 
 void selection_sort(int arr[], int lenght) {
 
-    int min;
+    int min, min_index, flag = 0;
 
     printf("arr => ");
     print_array(arr, lenght);
@@ -32,12 +32,17 @@ void selection_sort(int arr[], int lenght) {
     printf("lenght = %d\n", lenght);
 
     for (int i = 0; i < lenght-1; i++) {
-        min = INT_MAX;
-        for (int j = i; j < lenght; j++) {
+        min = arr[i];
+        for (int j = i+1; j < lenght; j++) {
             if (arr[j] < min) {
                 min = arr[j];
-                swap(&arr[j], &arr[i]);
+                min_index = j;
+                flag = 1;
             }
+        }
+        if (flag == 1) {
+            swap(&arr[i], &arr[min_index]);
+            flag = 0;
         }
         print_array(arr, lenght);
         printf("\n");
