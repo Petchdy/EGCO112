@@ -50,8 +50,8 @@ void add_node_front(Node ** head, int new_node_val) {
     // create a new_node to add into linked_list
     Node * new_node = create_node(new_node_val);
 
-    // because we are adding this node at the front so in pointer has to point to the old head
-    // after this line new_node will be our new linked_list
+    // because we are adding this node at the front so it pointer has to point to the old head
+    // after this line new_node will be our new head point to the old head
     new_node->ptr = *head;
     // set up new head = new_node
     *head = new_node;
