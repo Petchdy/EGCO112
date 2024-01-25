@@ -39,15 +39,20 @@ void insertion_sort(int arr[], int lenght) {
 
 void selection_sort(int arr[], int lenght) {
 
-    int min;
+    int min, min_index, flag = 0;
 
     for (int i = 0; i < lenght-1; i++) {
-        min = 32767;
-        for (int j = i; j < lenght; j++) {
+        min = arr[i];
+        for (int j = i+1; j < lenght; j++) {
             if (arr[j] < min) {
                 min = arr[j];
-                swap(&arr[j], &arr[i]);
+                min_index = j;
+                flag = 1;
             }
+        }
+        if (flag == 1) {
+            swap(&arr[i], &arr[min_index]);
+            flag = 0;
         }
     }
 }
