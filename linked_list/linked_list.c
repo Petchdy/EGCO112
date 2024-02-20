@@ -11,6 +11,7 @@ Node * create_node(int val);
 void add_node_front(Node ** head, int new_node_val);
 void add_node_back(Node ** head, int new_node_val);
 void add_node_at(Node ** head, int new_node_val, int new_node_index);
+void delete_node(Node ** head, int target);
 void print_linked_list(Node * head);
 
 int main(int argc, char * argv[]) {
@@ -28,7 +29,11 @@ int main(int argc, char * argv[]) {
 
     print_linked_list(linked_list);
     printf("\n");
-    
+
+    delete_node(&linked_list, 5);
+    print_linked_list(linked_list);
+    printf("\n");
+
     return 0;
 
 }
@@ -119,6 +124,48 @@ void add_node_at(Node ** head, int new_node_val, int new_node_index) {
         add_node_back(head, new_node_val);
     }
 
+}
+
+void delete_node(Node ** head, int target) {
+    Node * temp = (*head);
+    Node * temp2;
+
+    // check if the first node is our target
+    if (temp->value == target) {
+        (*head) = (*head)->ptr;
+
+        // free our temp node
+        free(temp);
+
+    }
+    else {
+        // go though linklist to find our target
+        // check the second next node
+        while (temp->ptr != NULL && temp->ptr->value != target) {
+            temp = temp->ptr;
+        }
+        
+        // end up at the node before our target node or the last node of linklist
+        // in case end up at the node before our target node
+        if (temp->ptr != NULL) {
+            
+            // change the current node ptr to the second next node
+            // save target node position
+            temp2 = temp->ptr;
+            // cut out our target node
+            temp->ptr = temp->ptr->ptr;
+
+            // free our target node
+            free(temp2);
+
+        }
+        // in case which our target does not exist
+        else {
+            // just do nothing
+            printf("target not found\n");
+
+        }
+    }
 }
 
 void print_linked_list(Node * linked_list) {
