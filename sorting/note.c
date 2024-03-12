@@ -15,14 +15,14 @@ int main(int argc, char * argv[]) {
     // printf("bubble_sort => ");
     // bubble_sort(arr, argc-1);
     // print_array(arr, argc-1);
-    // printf("\n");
-    // printf("selection_sort => ");
-    // selection_sort(arr, argc-1);
-    // print_array(arr, argc-1);
-    // printf("\n");
-    printf("insertion_sort => ");
-    insertion_sort(arr, argc-1);
+    // printf("\n");    
+    printf("selection_sort => ");
+    selection_sort(arr, argc-1);
     print_array(arr, argc-1);
     printf("\n");
+    // printf("insertion_sort => ");
+    // insertion_sort(arr, argc-1);
+    // print_array(arr, argc-1);
+    // printf("\n");
 
 }
